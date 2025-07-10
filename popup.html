@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub PR Manager</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GitHub PR Manager</h1>
+            <button id="refreshBtn" class="refresh-btn" title="更新">🔄</button>
+        </header>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <span>読み込み中...</span>
+        </div>
+
+        <div id="error" class="error hidden">
+            <p id="errorMessage"></p>
+            <button id="settingsBtn" class="settings-btn">設定を開く</button>
+        </div>
+
+        <div id="content" class="content">
+            <div class="tabs">
+                <button id="reviewTab" class="tab-btn active">レビュー待ち</button>
+                <button id="myPrsTab" class="tab-btn">作成済み</button>
+            </div>
+
+            <div id="reviewSection" class="section active">
+                <div class="section-header">
+                    <h2>レビュー待ち (Action Required)</h2>
+                    <span id="reviewCount" class="count">0</span>
+                </div>
+                <div id="reviewList" class="pr-list"></div>
+            </div>
+
+            <div id="myPrsSection" class="section">
+                <div class="section-header">
+                    <h2>作成済み (My Pull Requests)</h2>
+                    <span id="myPrsCount" class="count">0</span>
+                </div>
+                <div id="myPrsList" class="pr-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "GitHub PR Manager",
+    "version": "1.0.0",
+    "description": "レビューすべきPRと作成したPRを一覧表示するChrome拡張機能",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "alarms"
+    ],
+    "host_permissions": [
+        "https://api.github.com/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "GitHub PR Manager"
+    },
+    "options_page": "options.html",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "icons": {
+        "16": "icons/favicon-16x16.png",
+        "32": "icons/favicon-32x32.png",
+        "96": "icons/favicon-96x96.png",
+        "144": "icons/favicon-144x144.png"
+    }
+}

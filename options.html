@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub PR Manager - 設定</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GitHub PR Manager - 設定</h1>
+        </header>
+
+        <main>
+            <section class="settings-section">
+                <h2>GitHub Personal Access Token</h2>
+                <p class="description">
+                    GitHub APIにアクセスするためのPersonal Access Tokenを設定してください。
+                    <br>
+                    <strong>必要なスコープ:</strong> <code>repo</code>
+                </p>
+
+                <div class="form-group">
+                    <label for="tokenInput">Personal Access Token:</label>
+                    <input type="password" id="tokenInput" placeholder="ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
+                    <button type="button" id="toggleToken" class="toggle-btn">👁️</button>
+                </div>
+
+                <div class="form-actions">
+                    <button id="saveBtn" class="save-btn">保存</button>
+                    <button id="testBtn" class="test-btn">接続テスト</button>
+                </div>
+
+                <div id="status" class="status hidden"></div>
+            </section>
+
+            <section class="settings-section">
+                <h2>Personal Access Tokenの作成方法</h2>
+                <ol class="instructions">
+                    <li><a href="https://github.com/settings/tokens" target="_blank" rel="noopener">GitHub Settings > Developer settings > Personal access tokens</a> にアクセス</li>
+                    <li>「Generate new token (classic)」をクリック</li>
+                    <li>Token名を入力（例: "PR Manager Chrome Extension"）</li>
+                    <li><strong>「repo」スコープにチェック</strong>を入れる</li>
+                    <li>「Generate token」をクリック</li>
+                    <li>生成されたトークンをコピーして上記のフィールドに貼り付け</li>
+                </ol>
+                <p class="warning">
+                    ⚠️ Personal Access Tokenは機密情報です。他人と共有しないでください。<br>
+                    このトークンはローカルのブラウザストレージに安全に保存されます。
+                </p>
+            </section>
+
+            <section class="settings-section">
+                <h2>その他の設定</h2>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="autoRefresh">
+                        自動更新を有効にする（15分ごと）
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="showNotifications">
+                        新しいレビューリクエストの通知を表示
+                    </label>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 GitHub PR Manager Chrome Extension</p>
+        </footer>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>
