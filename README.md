@@ -2,6 +2,8 @@
 
 レビューすべきPRと作成したPRを一覧表示するChrome拡張機能です。
 
+![image](https://github.com/user-attachments/assets/f04e390a-fe68-4b7e-876d-a2d22aa706eb)
+
 ## 機能
 
 - **レビュー待ちPR一覧**: 自分がレビュワーとしてリクエストされているPRを表示
